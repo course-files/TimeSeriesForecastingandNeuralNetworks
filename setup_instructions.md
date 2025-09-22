@@ -100,7 +100,25 @@
      - For the Python path: Browse to your `.venv/bin/python` (on **Linux/Mac**) or `.venv\Scripts\python.exe` (on **Windows**).
      - Select it and apply.
 
-3. Install the packages from **requirements.txt**
+3. Activate the virtual environment through your chosen IDE.
+
+   **A. If using PyCharm**
+
+   - Go to File > Settings > Python > Add Interpreter.
+   - Then select "Add Local Interpreter"
+   - Since the virtual environment was already created, you will see the message ".venv already exists in the specified folder".
+   - Therefore, choose "Select Existing Environment".
+   - In the next window, specify the path that points to the ".venv" folder inside your project directory.
+   ![img.png](assets/images/activate_venv_pycharm.png)
+
+   **B. If using VS Code**
+
+     - Go to Settings > Command Palette.
+     - Type "Python: Select Interpreter" and select it.
+     - Choose the interpreter that points to your `.venv` folder.
+     ![img.png](assets/images/activate_venv_vscode.png)
+
+4. Install the packages from **requirements.txt**
     - Once the virtual environment is active, run:
 
     ```shell
@@ -110,7 +128,7 @@
     - `-r` tells **pip** to install all packages listed in the file.
     - **pip** will automatically find compatible versions (or raise an error if there is a conflict).
 
-4. You can confirm the installed packages using:
+5. You can confirm the installed packages using:
 
    ```shell
    pip list
