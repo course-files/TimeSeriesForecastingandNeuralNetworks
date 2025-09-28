@@ -111,6 +111,10 @@ Use any OHLCV stock data apart from the ones used in the notebooks.
      - A summary table of forecasted values.
      - Visuals highlighting differences between models (e.g., error metrics, trends).
 
+4. **Use of NVIDIA GPU**
+   - If you have access to an NVIDIA GPU (locally not on Colab), demonstrate what must be done to use it for training the LSTM model to improve performance and reduce training time.
+   - Document the impact of using the GPU on training time and model performance in your submission.
+
 ---
 
 **General Instructions:**
