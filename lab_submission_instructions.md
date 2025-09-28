@@ -122,6 +122,14 @@ Use any OHLCV stock data apart from the ones used in the notebooks.
 - Use the code examples in the repository for guidance on saving and formatting your forecast data.
 - Your Power BI dashboard should clearly present the forecast results for interpretation and decision-making.
 
+### Video Demonstration
+
+For all the three levels, submit the link to a short video (not more than 4 minutes) demonstrating the forecasting and the created dashboard.
+
+| **Key**                | **Value** |
+|:-----------------------|:----------|
+| **Link to the video:** |           |
+
 
 ## Grading Approach
 
