@@ -1,0 +1,10 @@
+# requirements/dev.txt
+-r https://raw.githubusercontent.com/course-files/RegressionAndClassification/refs/heads/main/requirements/base.txt
+
+pytest
+pytest-cov
+black
+flake8
+ipython
+jupyter
+seaborn

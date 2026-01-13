@@ -1,0 +1,13 @@
+# requirements/base.txt
+numpy
+pandas
+scikit-learn
+matplotlib
+joblib
+
+pandas-datareader
+mplfinance
+yfinance
+prophet
+protobuf
+statsmodels

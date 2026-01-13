@@ -1,0 +1,12 @@
+# requirements/colab.txt
+-r https://raw.githubusercontent.com/course-files/RegressionAndClassification/refs/heads/main/requirements/base.txt
+
+# Colab compatibility
+numpy<2.2
+# pillow<12
+
+# Colab-only additions
+tensorflow
+keras
+# opencv-python
+# gradio

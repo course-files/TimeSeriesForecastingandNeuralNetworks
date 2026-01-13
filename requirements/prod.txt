@@ -1,0 +1,5 @@
+# requirements/prod.txt
+-r https://raw.githubusercontent.com/course-files/RegressionAndClassification/refs/heads/main/requirements/base.txt
+
+# tensorflow>=2.13,<2.20
+numpy>=1.26,<2.2
