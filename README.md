@@ -3,8 +3,8 @@
 | Key              | Value                                                                                                                                                                                                                                                                                                            |
 |:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Course Codes** | BBT 4206 and BFS 4102                                                                                                                                                                                                                                                                                            |
-| **Course Names** | BBT 4206: Business Intelligence II (Week 7-9 of 13)<br>BFS 4102: Advanced Business Data Analytics (Week 7-9 of 13)                                                                                                                                                                                               |
-| **Semester**     | August to November 2025                                                                                                                                                                                                                                                                                          |
+| **Course Names** | BBT 4206: Business Intelligence II (Week 7-9 of 13)<br>BFS 4102: Advanced Business Data Analytics (Week 1-3 of 13)                                                                                                                                                                                               |
+| **Semester**     | January to April 2026                                                                                                                                                                                                                                                                                          |
 | **Lecturer**     | Allan Omondi                                                                                                                                                                                                                                                                                                     |
 | **Contact**      | aomondi@strathmore.edu                                                                                                                                                                                                                                                                                           |
 | **Note**         | The lecture contains both theory and practice.<br/>This notebook forms part of the practice.<br/>It is intended for educational purposes only.<br/>Recommended citation: [BibTex](https://raw.githubusercontent.com/course-files/TimeSeriesForecastingandNeuralNetworks/refs/heads/main/RecommendedCitation.bib) |
@@ -20,25 +20,33 @@
 ├── LICENSE
 ├── README.md
 ├── RecommendedCitation.bib
+├── admin_instructions
+│   ├── instructions_for_postlab_cleanup.md
+│   ├── instructions_for_project_setup.md
+│   └── instructions_for_python_installation.md
 ├── assets
 │   └── images
-│       ├── activate_venv_pycharm.png
-│       ├── activate_venv_vscode.png
 │       └── candlestick_explanation.png
 ├── data
 │   ├── Download Data - STOCK_KE_XNAI_SCOM.csv
 │   ├── stockprice_cleaned.csv
 │   └── stockprice_original.csv
 ├── lab_submission_instructions.md
-├── requirements.txt
-└── setup_instructions.md
+└── requirements
+    ├── base.txt
+    ├── colab.txt
+    ├── constraints.txt
+    ├── dev.inferred.txt
+    ├── dev.lock.txt
+    ├── dev.txt
+    └── prod.txt
 
-4 directories, 16 files
+6 directories, 22 files
 ```
 
 ## Setup Instructions
 
-- [Setup Instructions](setup_instructions.md)
+- [Setup Instructions](./admin_instructions/instructions_for_project_setup.md)
 
 ## Lab Manual
 
@@ -52,3 +60,7 @@ Refer to the files below for more details:
 ## Lab Submission Instructions
 
 - [Lab Submission Instructions](lab_submission_instructions.md)
+
+## Cleanup Instructions (to be done after submitting the lab)
+
+- [Cleanup Instructions](/admin_instructions/instructions_for_postlab_cleanup.md)

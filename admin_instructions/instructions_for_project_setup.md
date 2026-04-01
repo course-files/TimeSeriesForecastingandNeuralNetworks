@@ -1,8 +1,8 @@
-# The Virtual Environment (`.venv`) and the List of Packages File (`requirements.txt`)
+# The Virtual Environment (`.venv`) and the List of Dependencies Folder (`./requirements`)
 
 ## Project Setup Instructions
 
-### Install all the packages listed in `requirements.txt` in a virtual environment
+### Install all the dependencies listed in the `requirements` folder depending on the environment
 
 1. Confirm that you have Python installed. You can check this by running:
 
@@ -16,9 +16,14 @@
     python3 --version
     ```
 
-    - If Python is not installed (i.e., you do not see any version number), 
-   then download and install it from the official website:
-   <https://www.python.org/downloads/>
+    or (for Windows - Replace **Python312** (Python version 3.12) with the Python version you want to use)
+
+    ```shell
+    '/C/Python312/python.exe' --version
+    ```
+
+    - If Python is not installed (i.e., you do not see any version number),
+   then refer to [instructions_for_python_installation.md](instructions_for_python_installation.md) for a guide on installing multiple python versions for the labs.
 
 2. Create and activate a **virtual environment** to keep your project
 dependencies isolated from the system Python packages.
@@ -55,11 +60,45 @@ dependencies isolated from the system Python packages.
      site-packages.
 
    - In the root of your project folder, run the following command to create
-   the virtual environment:
+   the virtual environment. This will use the global python version.
 
     ```shell
     python -m venv .venv
     ```
+
+   - If you want to use a specific python version to create your virtual environment, then use the python interpreter located in the correct path.
+
+     - Example of creating a virtual environment that will use Python Version 3.12 in Windows:
+
+      ```shell
+      /C/Python312/python.exe -m venv .venv
+      ```
+
+     - Example of creating a virtual environment that will use Python Version 3.14 in Windows:
+
+      ```shell
+      /C/Python314/python.exe -m venv .venv
+      ```
+
+     - Example of creating a virtual environment that will use Python Version 3.12.10 in Linux:
+
+      ```shell
+      mkdir ~/Documents/project_folder
+      cd ~/Documents/project_folder
+      pyenv local 3.12.10
+      python --version
+      python -m venv .venv
+      ```
+
+     - Example of creating a virtual environment that will use Python Version 3.14.3 in Linux:
+
+      ```shell
+      mkdir ~/Documents/project_folder
+      cd ~/Documents/project_folder
+      pyenv local 3.14.3
+      python --version
+      python -m venv .venv
+      ```
 
    **Part B**
 
@@ -130,44 +169,57 @@ dependencies isolated from the system Python packages.
    - Since the virtual environment was already created, you will see the message ".venv already exists in the specified folder".
    - Therefore, choose "Select Existing Environment".
    - In the next window, specify the path that points to the ".venv" folder inside your project directory.
-   ![img.png](assets/images/activate_venv_pycharm.png)
+   ![img.png](https://raw.githubusercontent.com/course-files/classlab/refs/heads/main/assets/images/activate_venv_pycharm.png)
 
    **B. If using VS Code**
 
      - Go to Settings > Command Palette.
      - Type "Python: Select Interpreter" and select it.
      - Choose the interpreter that points to your `.venv` folder.
-     ![img.png](assets/images/activate_venv_vscode.png)
+     ![img.png](https://raw.githubusercontent.com/course-files/classlab/refs/heads/main/assets/images/activate_venv_vscode.png)
 
-4. Install the required packages depending on the environment:
+4. Set the correct environment by creating a `.env` file in the root of the repository. Add the values of the variables listed in [.env.example](.env.example) as discussed in class:
+
+5. Install the required packages depending on the environment:
     - [base.txt](requirements/base.txt): Defines the fundamental packages that the code in the repository needs to be installed for it to run. It is: Environment-agnostic, developer-curated, stable, and minimal.
     - [dev.txt](requirements/dev.txt): Defines what a developer needs to work productively and safely. It can include linters, formatters, test frameworks, and interactive tools. It should not include platform-specific constraints or deployment-only dependencies.
     - [colab.txt](requirements/colab.txt): It is platform-specific for Google Colab. It specifies the adjustments required when you are running the notebook in Colab, e.g., packages that are not included in Colab by default, and compatibility pins to avoid breaking Colab.
     - [prod.txt](requirements/prod.txt): Defines what must be installed in a production environment. It includes runtime frameworks (TensorFlow).
     - Governing Rule: If the application code imports it to run, it belongs in base.txt. If only a developer uses it to think, test, or explore, it belongs in dev.txt.
 
-    - Run one of the following depending on your environment once the virtual environment is active:
+    - Run one of the following depending on your environment once the virtual environment is active (**Note:** you should be using a "development" environment to do the lab):
   
-      - Development environment (local or Codespaces) with constraints to specific versions:
-
-        ```shell
-        pip install -r requirements/dev.txt -c requirements/constraints.txt
-
-        ```
-
-      - Google Colab environment:
-
-        ```shell
-        %pip install -r requirements/colab.txt
-        ```
-
       - Production environment:
 
         ```shell
         pip install -r requirements/prod.txt
         ```
 
-5. You can confirm the installed packages using:
+      - Staging environment:
+
+        ```shell
+        pip install -r requirements/dev.txt -c requirements/constraints.txt
+        ```
+
+      - Testing environment:
+
+        ```shell
+        pip install -r requirements/dev.txt -c requirements/constraints.txt
+        ```
+
+      - Colab environment:
+
+        ```shell
+        pip install -r requirements/colab.txt
+        ```
+
+      - Development environment:
+
+        ```shell
+        pip install -r requirements/dev.txt -c requirements/constraints.txt
+        ```
+
+6. You can confirm the installed packages using:
 
    ```shell
    pip list
@@ -175,31 +227,20 @@ dependencies isolated from the system Python packages.
 
 ## Project Creation Instructions
 
-### Creating a Project Structure using `tree`
+## Creating/Updating a `requirements.txt` File
 
-1. Install MSYS2 (for Windows) if not already installed.
-2. Download link: <https://www.msys2.org/docs/installer/>
-3. Navigate to the project's root folder using the MSYS2 terminal.
-
-```shell
-tree -I ".venv|__pycache__|roughwork|lab_submission_ANSWERS"
-```
-
-## Creating the `requirements.txt` File
-
-- The `requirements.txt` file is used for listing packages
-(installable units via `pip`). Those packages usually contain the libraries you actually import and use.
+- The `requirements.txt` file is used for listing dependencies (packages and the libraries they contain) required to run the lab or application.
 
 **Analogy:**
 
-- Packages → like the grocery bags you bring home from the store.
+- 📦 Packages → like the grocery bags you bring home from the store.
   - Example: You pip install `numpy` → you just bought a bag labeled **NumPy**.
 
-- Libraries → like the ingredients inside those bags.
-  - Example: Inside the NumPy package, you find all the mathematical functions (arrays, linear algebra, random number generators).
+- 📚Libraries → like the ingredients inside those bags.
+  - Example: Inside the NumPy package, you will find various mathematical tools (arrays, linear algebra functions, random number generators, etc.).
 
 - When you create a `requirements.txt` file, you are making a "shopping list" of packages — the bags you must bring from the store.
-- And when you write Python code, you are actually cooking with the ingredients (libraries) inside those packages.
+- And when you write Python code, you are "cooking using the ingredients (libraries) inside the shopping bags (packages)".
 
 **Option 1: Using `pipreqs`**
 
@@ -231,4 +272,14 @@ pipreqs . --savepath ./requirements/dev.inferred.txt --encoding=utf8 --force --i
 
 ```shell
 pip freeze > ./requirements/dev.lock.txt
+```
+
+### [Optional] Creating a Project Structure using `tree` in Windows
+
+1. Install MSYS2 (for Windows) if not already installed.
+2. Download link: [https://github.com/msys2/msys2-installer/releases](https://github.com/msys2/msys2-installer/releases)
+3. Navigate to the project's root folder using the MSYS2 terminal.
+
+```shell
+tree -I ".venv|.idea|__pycache__|roughwork|lab_submission_ANSWERS"
 ```
