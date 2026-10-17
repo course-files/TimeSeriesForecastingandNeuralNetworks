@@ -200,6 +200,5 @@ cython_debug/
 outputs/*
 !outputs/.gitkeep
 
-data/
 v1/
 v2/
