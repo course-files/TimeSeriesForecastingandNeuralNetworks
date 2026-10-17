@@ -1,10 +1,10 @@
 # requirements/dev.txt
--r https://raw.githubusercontent.com/course-files/TimeSeriesForecastingandNeuralNetworks/refs/heads/main/requirements/base.txt
+# What you need to work on the lab: everything in base.txt, plus tools for
+# running notebooks, testing, and formatting.
+-r base.txt
 
+jupyter
+ipykernel
 pytest
-pytest-cov
 black
 flake8
-ipython
-jupyter
-seaborn

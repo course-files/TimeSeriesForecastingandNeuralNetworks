@@ -1,12 +1,8 @@
 # requirements/colab.txt
--r https://raw.githubusercontent.com/course-files/TimeSeriesForecastingandNeuralNetworks/refs/heads/main/requirements/base.txt
-
-# Colab compatibility
-numpy<2.2
-# pillow<12
-
-# Colab-only additions
-tensorflow
-keras
-# opencv-python
-# gradio
+# Google Colab already includes numpy, pandas, scikit-learn, statsmodels,
+# matplotlib, TensorFlow and Keras. Installing base.txt on top could replace
+# them with versions that conflict with the rest of Colab, so we add only what
+# Colab does not have.
+arch
+mplfinance
+yfinance

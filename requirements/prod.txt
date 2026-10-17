@@ -1,5 +1,3 @@
 # requirements/prod.txt
--r https://raw.githubusercontent.com/course-files/TimeSeriesForecastingandNeuralNetworks/refs/heads/main/requirements/base.txt
-
-# tensorflow>=2.13,<2.20
-numpy>=1.26,<2.2
+# Used if you deploy a trained model. Training-only tools are left out.
+-r base.txt

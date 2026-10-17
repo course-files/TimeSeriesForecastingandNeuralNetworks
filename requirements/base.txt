@@ -1,13 +1,24 @@
 # requirements/base.txt
-numpy
-pandas
-scikit-learn
-matplotlib
-joblib
+# Everything the notebooks and the tslab package need in order to run.
 
-pandas-datareader
-mplfinance
-yfinance
-prophet
-protobuf
-statsmodels
+# Core numerical and data packages
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.3
+
+# Time series analysis and forecasting
+statsmodels>=0.14
+arch>=7.0
+
+# Plotting
+matplotlib>=3.8
+mplfinance>=0.12.10b0
+
+# Neural networks (Keras 3 on the TensorFlow backend)
+tensorflow>=2.16
+keras>=3.0
+
+# Only used by download_data.py, which refreshes the data snapshot
+yfinance>=0.2.40
+

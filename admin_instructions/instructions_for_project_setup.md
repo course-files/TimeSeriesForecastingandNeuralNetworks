@@ -178,48 +178,43 @@ dependencies isolated from the system Python packages.
      - Choose the interpreter that points to your `.venv` folder.
      ![img.png](https://raw.githubusercontent.com/course-files/classlab/refs/heads/main/assets/images/activate_venv_vscode.png)
 
-4. Set the correct environment by creating a `.env` file in the root of the repository. Add the values of the variables listed in [.env.example](.env.example) as discussed in class:
-
-5. Install the required packages depending on the environment:
+4. Install the required packages. The `requirements` folder has one file for each situation:
     - [base.txt](requirements/base.txt): Defines the fundamental packages that the code in the repository needs to be installed for it to run. It is: Environment-agnostic, developer-curated, stable, and minimal.
-    - [dev.txt](requirements/dev.txt): Defines what a developer needs to work productively and safely. It can include linters, formatters, test frameworks, and interactive tools. It should not include platform-specific constraints or deployment-only dependencies.
-    - [colab.txt](requirements/colab.txt): It is platform-specific for Google Colab. It specifies the adjustments required when you are running the notebook in Colab, e.g., packages that are not included in Colab by default, and compatibility pins to avoid breaking Colab.
-    - [prod.txt](requirements/prod.txt): Defines what must be installed in a production environment. It includes runtime frameworks (TensorFlow).
+    - [dev.txt](requirements/dev.txt): Defines what a developer needs to work productively and safely. It includes everything in `base.txt`, plus tools for notebooks, testing and formatting.
+    - [colab.txt](requirements/colab.txt): It is platform-specific for Google Colab. It lists only the packages that Colab does not already include, so that nothing Colab depends on is replaced.
+    - [prod.txt](requirements/prod.txt): Defines what must be installed if you deploy a trained model.
+    - [constraints.txt](requirements/constraints.txt): Upper limits on the package versions, to stop a future release from changing the behaviour of the lab.
     - Governing Rule: If the application code imports it to run, it belongs in base.txt. If only a developer uses it to think, test, or explore, it belongs in dev.txt.
 
-    - Run one of the following depending on your environment once the virtual environment is active (**Note:** you should be using a "development" environment to do the lab):
-  
-      - Production environment:
+    - Run one of the following once the virtual environment is active (**Note:** you should use the first one to do the lab on your own computer):
 
-        ```shell
-        pip install -r requirements/prod.txt
-        ```
-
-      - Staging environment:
+      - Your own computer (Windows, Linux, or macOS):
 
         ```shell
         pip install -r requirements/dev.txt -c requirements/constraints.txt
         ```
 
-      - Testing environment:
-
-        ```shell
-        pip install -r requirements/dev.txt -c requirements/constraints.txt
-        ```
-
-      - Colab environment:
+      - Google Colab:
 
         ```shell
         pip install -r requirements/colab.txt
         ```
 
-      - Development environment:
+      - Deployment of a trained model:
 
         ```shell
-        pip install -r requirements/dev.txt -c requirements/constraints.txt
+        pip install -r requirements/prod.txt
         ```
 
-6. You can confirm the installed packages using:
+    - The installation of TensorFlow is large (more than half a gigabyte) and can take several minutes. Do it on a good connection, before class.
+
+5. Confirm the installation by running the automated checks from the root of the repository:
+
+   ```shell
+   python -m pytest tests
+   ```
+
+6. You can list the installed packages using:
 
    ```shell
    pip list

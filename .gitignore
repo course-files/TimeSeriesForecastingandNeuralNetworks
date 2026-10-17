@@ -196,3 +196,10 @@ cython_debug/
 /roughwork
 /.idea
 .venv*
+# Lab outputs created when you run the notebooks
+outputs/*
+!outputs/.gitkeep
+
+data/
+v1/
+v2/

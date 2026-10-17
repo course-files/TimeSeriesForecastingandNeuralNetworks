@@ -1,3 +1,13 @@
 # requirements/constraints.txt
-# numpy<2.2
-# pandas<2.4
+# Upper limits, used together with dev.txt:
+#     pip install -r requirements/dev.txt -c requirements/constraints.txt
+# They stop a future release from silently changing the behaviour of the lab.
+# Last tested with Python 3.11, numpy 2.4, pandas 3.0 (and 2.2), scikit-learn 1.9,
+# statsmodels 0.15, arch 8.0, tensorflow 2.21 and keras 3.15.
+# If you run the lab long after this semester and something breaks, this file is the first place to look.
+numpy<3
+pandas<3.2
+scikit-learn<1.12
+statsmodels<0.17
+tensorflow<2.27
+keras<3.20
