@@ -9,14 +9,6 @@
 | **Contact**      | aomondi@strathmore.edu |
 | **Note**         | The lecture contains both theory and practice.<br/>These notebooks form part of the practice.<br/>They are intended for educational purposes only, and nothing in them is investment advice.<br/>Recommended citation: [BibTex](https://raw.githubusercontent.com/course-files/TimeSeriesForecastingandNeuralNetworks/refs/heads/main/RecommendedCitation.bib) |
 
-## What You Will Do in This Lab
-
-You are a data analyst advising a portfolio manager. The manager wants to know what a stock's closing price is likely to do tomorrow, next week, next month and next quarter. You will use **real market data** and **several predictors at once** (the stock's own history, its volatility, technical indicators, trading volume, and the S&P 500, a technology fund, the VIX, interest rates, the dollar, oil and gold).
-
-Along the way you will learn to ask the question that separates a useful forecast from an impressive-looking one:
-
-> Does my model beat the simplest possible forecast ("tomorrow will be the same as today") on days it has never seen, and is the difference bigger than luck?
-
 ## Repository Structure
 
 ```text
@@ -51,7 +43,7 @@ Along the way you will learn to ask the question that separates a useful forecas
 
 ## Setup Instructions
 
-1. Follow [the project setup instructions](./admin_instructions/instructions_for_project_setup.md) to create and activate a virtual environment (`.venv`).
+1. Follow [the project setup instructions](./0_setup_instructions/1_environment_setup.md) to create and activate a virtual environment (`.venv`).
 2. Install the packages (the first line is for your own computer, the second is for Google Colab):
 
     ```shell
@@ -94,4 +86,4 @@ The run times are for a typical laptop with a CPU. No GPU is needed.
 
 ## Cleanup Instructions (to be done after submitting the lab)
 
-- [Cleanup Instructions](admin_instructions/instructions_for_postlab_cleanup.md)
+- [Cleanup Instructions](0_setup_instructions/4_teardown_instructions.md)
