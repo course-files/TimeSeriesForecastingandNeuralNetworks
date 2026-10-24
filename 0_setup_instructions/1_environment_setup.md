@@ -23,7 +23,7 @@
     ```
 
     - If Python is not installed (i.e., you do not see any version number),
-   then refer to [instructions_for_python_installation.md](instructions_for_python_installation.md) for a guide on installing multiple python versions for the labs.
+   then refer to [instructions_for_python_installation.md](2_python_installation.md) for a guide on installing multiple python versions for the labs.
 
 2. Create and activate a **virtual environment** to keep your project
 dependencies isolated from the system Python packages.
