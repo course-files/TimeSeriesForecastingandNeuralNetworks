@@ -50,9 +50,9 @@ PREDICTOR_TICKERS = {
 
 # The snapshot is a fixed period so that every student works on identical
 # numbers. END is exclusive (Yahoo Finance convention), so the last trading
-# day in the snapshot is 30 September 2026.
+# day in the snapshot is specified.
 SNAPSHOT_START = "2015-01-01"
-SNAPSHOT_END = "2026-10-01"
+SNAPSHOT_END = "2026-10-25"
 
 # Predictors are forward filled for at most this many days. This covers days
 # when one market was open and another was closed (public holidays).
