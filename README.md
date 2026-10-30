@@ -48,6 +48,9 @@
 
     ```shell
     pip install -r requirements/dev.txt -c requirements/constraints.txt
+    ```
+
+    ```shell
     pip install -r requirements/colab.txt
     ```
 
@@ -59,9 +62,11 @@
 
 4. Open the notebooks in order. **Select the interpreter from your `.venv`** as the notebook kernel. The first cell of every notebook prints the interpreter it uses; confirm that it points to your `.venv`.
 
-**Python version.** The lab was developed and tested with Python 3.11. Python 3.10 to 3.12 are expected to work. TensorFlow supports a Python release only some months after it appears, so if the installation of `tensorflow` fails, check your Python version first and use 3.11 if in doubt.
+**Python version:** The lab was developed and tested with Python 3.11. Python 3.10 to 3.12 are expected to work. TensorFlow supports a Python release only some months after it appears, so if the installation of `tensorflow` fails, check your Python version first and use 3.11 if in doubt.
 
-**Google Colab.** Open a notebook from the repository in Colab. The first cell clones the repository and installs what is missing. Colab disconnects idle sessions, so download your results regularly.
+**Google Colab:** Open a notebook from the repository in Colab. The first cell clones the repository and installs what is missing. Colab disconnects idle sessions, so download your results regularly.
+
+**Data source:** [Yahoo Finance](https://finance.yahoo.com/markets/stocks/most-active/)
 
 ## Lab Manual
 
