@@ -1,7 +1,7 @@
 """
-Settings shared by every notebook.
+These are the settings shared by every notebook.
 
-Change TARGET_TICKER if you want to repeat the lab on another stock. For the
+Change TARGET_TICKER if you want to repeat the lab using another stock. For the
 submission, your group must use a target stock that is different from the one
 used in the notebooks (see lab_submission_instructions.md).
 """
@@ -14,9 +14,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 
-# ---------------------------------------------------------------------------
-# What we forecast: the daily closing price of one stock.
-# ---------------------------------------------------------------------------
 # TARGET_TICKER = "AAPL"
 TARGET_TICKER = "NVDA"
 
@@ -48,11 +45,11 @@ PREDICTOR_TICKERS = {
     "GOLD": "GC=F",
 }
 
-# The snapshot is a fixed period so that every student works on identical
+# The snapshot is a fixed period so that everyone in the class works on identical
 # numbers. END is exclusive (Yahoo Finance convention), so the last trading
 # day in the snapshot is specified.
 SNAPSHOT_START = "2015-01-01"
-SNAPSHOT_END = "2026-10-25"
+SNAPSHOT_END = "2026-10-31"
 
 # Predictors are forward filled for at most this many days. This covers days
 # when one market was open and another was closed (public holidays).

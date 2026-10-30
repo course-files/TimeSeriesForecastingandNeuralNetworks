@@ -1,4 +1,4 @@
-"""A few plotting helpers, so that the notebooks stay readable."""
+"""These are a few plotting helpers, so that the notebooks stay readable."""
 
 import matplotlib.pyplot as plt
 import numpy as np

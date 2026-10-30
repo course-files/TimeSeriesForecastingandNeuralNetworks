@@ -14,16 +14,6 @@ files into the data/ folder:
 To use a different stock, pass its Yahoo Finance symbol:
 
     python download_data.py --target MSFT
-    python download_data.py --target SCOM.NR      (Safaricom; check the data first,
-                                                   coverage of the Nairobi exchange on
-                                                   Yahoo Finance is patchy)
-
-If your stock is not available on Yahoo Finance (many Nairobi Securities Exchange
-shares are not), download its daily prices by hand as a CSV file from another
-site, and let this script clean the file. The predictor markets are still
-downloaded from Yahoo Finance, unless a predictors.csv file already exists.
-
-    python download_data.py --target SCOM --from-csv "data/Download Data - STOCK_KE_XNAI_SCOM.csv"
 """
 
 import argparse
@@ -38,7 +28,7 @@ def main():
     parser.add_argument("--target", default=config.TARGET_TICKER, help="Yahoo Finance symbol of the stock to forecast")
     parser.add_argument("--start", default=config.SNAPSHOT_START)
     parser.add_argument("--end", default=config.SNAPSHOT_END, help="exclusive end date, YYYY-MM-DD")
-    parser.add_argument("--from-csv", default=None, help="a CSV of daily prices that you downloaded by hand (see above)")
+    parser.add_argument("--from-csv", default=None, help="a CSV of daily prices that you downloaded manually (see above)")
     args = parser.parse_args()
 
     if args.from_csv:

@@ -3,12 +3,12 @@ Getting the market data into a DataFrame.
 
 There are two ways to get data, and it is worth understanding why we have both.
 
-1. THE SNAPSHOT (what students use).
-   The lecturer downloads the data once, on one date, and saves it in the
+1. THE SNAPSHOT.
+   I (the lecturer) download the data once, on one date, and save it in the
    data/ folder. Every student then loads the same files, so every student
    gets the same numbers. This also protects us from a classroom full of
    laptops asking Yahoo Finance for the same data at the same time, which
-   gets the whole campus network blocked.
+   can get the whole campus network blocked.
 
 2. A LIVE DOWNLOAD (what the lecturer uses, and what you use for your own
    stock in the submission).
@@ -93,18 +93,15 @@ def clean_manual_csv(path, target=None, data_dir=None):
     """
     Turn a price file that you downloaded BY HAND into the format used by this lab.
 
-    Many exchanges and data sites (MarketWatch, for example, for the Nairobi
-    Securities Exchange) let you download a CSV of daily prices from a web page.
+    Many exchanges and data sites let you download a CSV of daily prices from a web page.
     Those files are not clean: the newest day is first, dates are written as
     month/day/year, and numbers contain quotation marks and thousands
-    separators such as "1,231,534". This function fixes all of that.
+    separators such as "1,231,534". The purpose of this function is to fix all
+    of that.
 
     The file must have the columns Date, Open, High, Low, Close and Volume
     (in any order and with any capitalisation). The result is saved as
     data/target_<target>.csv.
-
-    NOTE: hand-downloaded prices are usually NOT adjusted for splits and
-    dividends. Check the history of your stock for splits before you trust it.
     """
     data_dir = Path(data_dir or config.DATA_DIR)
     target = target or Path(path).stem.replace(" ", "_")
@@ -154,7 +151,7 @@ def load_market_data(data_dir=None, target=None, verbose=True):
             "Option 1: pull the latest version of the repository (the lecturer "
             "publishes the snapshot there).\n"
             "Option 2: run  python download_data.py  from the project root "
-            "(needs an internet connection)."
+            "(needs an Internet connection)."
         )
 
     stock = pd.read_csv(target_path, index_col="Date", parse_dates=True)
