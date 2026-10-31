@@ -116,7 +116,7 @@ def diebold_mariano(actual, forecast_a, forecast_b, horizon=1):
 
 def dm_verdict(statistic, p_value, level=0.05):
     """
-    Put the Diebold-Mariano result into words.
+    Puts the Diebold-Mariano result into words.
     (The statistic compares the model with the naive forecast: negative means the model has the smaller error.)
     """
     if p_value >= level:
