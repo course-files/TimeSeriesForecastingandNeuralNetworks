@@ -23,7 +23,7 @@
 ├── 9_fourier_transform_optional.ipynb
 ├── download_data.py
 ├── lab_submission_instructions.md
-├── tslab/                  helper package used by the notebooks (read it!)
+├── tslab/               ← a helper package used by the notebooks (read it!)
 │   ├── config.py
 │   ├── data.py
 │   ├── features.py
@@ -31,9 +31,9 @@
 │   ├── metrics.py
 │   ├── plots.py
 │   └── nnutils.py
-├── tests/                  automated checks for the helper package
-├── data/                   the data snapshot (see data/README.md)
-├── outputs/                files created when you run the notebooks
+├── tests/                ← automated checks for the helper package
+├── data/                 ← the data snapshot (see data/README.md)
+├── outputs/              ← files created when you run the notebooks
 ├── requirements/
 ├── admin_instructions/
 ├── assets/
@@ -66,7 +66,11 @@
 
 **Google Colab:** Open a notebook from the repository in Colab. The first cell clones the repository and installs what is missing. Colab disconnects idle sessions, so download your results regularly.
 
-**Data source:** [Yahoo Finance](https://finance.yahoo.com/markets/stocks/most-active/)
+**Data source:** [Yahoo! Finance](https://finance.yahoo.com/markets/stocks/most-active/heatmap/)
+
+**Key Stocks:**
+- Alphabet (GOOGL): [https://finance.yahoo.com/quote/GOOGL/](https://finance.yahoo.com/quote/GOOGL/)
+- NVIDIA (NVDA): [https://finance.yahoo.com/quote/NVDA/](https://finance.yahoo.com/quote/NVDA/)
 
 ## Lab Manual
 
